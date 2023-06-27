@@ -4,21 +4,16 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Employee
 from django.forms import ModelForm
+from django.urls import reverse_lazy
 
 
 class EmployeeForm(ModelForm):
-    """
-        EmployeeForm used to define a form for updating or creating Employee Object
-    """
     class Meta:
         model = Employee
         fields = ['emp_id', 'emp_name', 'emp_email', 'emp_contact']
 
 
 def index(request):
-    """
-        Show Form Page
-    """
     return render(request, 'index.html')
 
 
