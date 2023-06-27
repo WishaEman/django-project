@@ -4,13 +4,19 @@ from .models import Employee
 from django.forms import ModelForm
 
 
-class EmployeeForm(ModelForm):  # used to define a form for updating or creating Employee Object
+class EmployeeForm(ModelForm):
+    """
+        EmployeeForm used to define a form for updating or creating Employee Object
+    """
     class Meta:
         model = Employee
         fields = ['emp_id', 'emp_name', 'emp_email', 'emp_contact']
 
 
-def index(request):   # retrieve form page
+def index(request):
+    """
+        Show Form Page
+    """
     return render(request, 'index.html')
 
 
