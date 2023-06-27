@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>C.R.U.D</title>
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <p style="margin-left:550px;"><a href="{%  url 'employee_list' %}">Check data</a></p>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="{% url 'employee_create' %}" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> ID</td>
+                        <td><input type="text" name="emp_id" required></td>
+                    </tr>
+                    <tr>
+                        <td> Name</td>
+                        <td><input type="text" name="emp_name" required></td>
+                    </tr>
+                    <tr>
+                        <td> Email</td>
+                        <td><input type='text' name='emp_email' required></td>
+                    </tr>
+                    <tr>
+                        <td> Contact Number</td>
+                        <td><input type='text' name='emp_contact' required></td>
+                    </tr>
+                    <tr>
+                        <td><button>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
